@@ -14,4 +14,4 @@ services:
     command: npm run dev
     restart: always
     security_opt:
-      - no-new-privileges:true
+      - no-new-privileges:true  
