@@ -6,25 +6,22 @@ type ConnectionStatus = {
   isConnected: boolean;
 };
 
-export const getServerSideProps: GetServerSideProps<
-  ConnectionStatus
-> = async () => {
+async function getData() {
+  const url = "/api/subscribers";
   try {
-    await client.connect(); // `await client.connect()` will use the default database passed in the MONGODB_URI
-    return {
-      props: { isConnected: true },
-    };
-  } catch (e) {
-    console.error(e);
-    return {
-      props: { isConnected: false },
-    };
-  }
-};
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
 
-export default function Home({
-  isConnected,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+export default function Home() {
   return (
     <div className="container">
       <Head>
@@ -36,15 +33,6 @@ export default function Home({
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">Next.js with MongoDB!</a>
         </h1>
-
-        {isConnected ? (
-          <h2 className="subtitle">You are connected to MongoDB</h2>
-        ) : (
-          <h2 className="subtitle">
-            You are NOT connected to MongoDB. Check the <code>README.md</code>{" "}
-            for instructions.
-          </h2>
-        )}
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
@@ -68,7 +56,7 @@ export default function Home({
             <h3>Examples &rarr;</h3>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
-
+          <button onClick={() => getData()}>MEOW</button>
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             target="_blank"
@@ -173,15 +161,8 @@ export default function Home({
           border-radius: 5px;
           padding: 0.75rem;
           font-size: 1.1rem;
-          font-family:
-            Menlo,
-            Monaco,
-            Lucida Console,
-            Liberation Mono,
-            DejaVu Sans Mono,
-            Bitstream Vera Sans Mono,
-            Courier New,
-            monospace;
+          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
 
         .grid {
@@ -203,9 +184,7 @@ export default function Home({
           text-decoration: none;
           border: 1px solid #eaeaea;
           border-radius: 10px;
-          transition:
-            color 0.15s ease,
-            border-color 0.15s ease;
+          transition: color 0.15s ease, border-color 0.15s ease;
         }
 
         .card:hover,
@@ -243,17 +222,8 @@ export default function Home({
         body {
           padding: 0;
           margin: 0;
-          font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            Segoe UI,
-            Roboto,
-            Oxygen,
-            Ubuntu,
-            Cantarell,
-            Fira Sans,
-            Droid Sans,
-            Helvetica Neue,
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
         }
 
