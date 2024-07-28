@@ -1,9 +1,4 @@
-import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import Head from "next/head";
-
-type ConnectionStatus = {
-  isConnected: boolean;
-};
 
 async function getData() {
   const url = "/api/subscribers";
