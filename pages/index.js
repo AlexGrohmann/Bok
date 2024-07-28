@@ -15,6 +15,28 @@ async function getData() {
   }
 }
 
+async function addData() {
+  const url = "/api/subscribers";
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ HR: "test", DE: "test" }),
+    });
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
 export default function Home() {
   return (
     <div className="container">
@@ -50,7 +72,8 @@ export default function Home() {
             <h3>Examples &rarr;</h3>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
-          <button onClick={() => getData()}>MEOW</button>
+          <button onClick={() => getData()}>get</button>
+          <button onClick={() => addData()}>add</button>
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             target="_blank"
