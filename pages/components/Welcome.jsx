@@ -1,5 +1,4 @@
 function Welcome(props) {
-    console.log(props);
     const {onClick} = props;
     return ( <div>
         <h1>

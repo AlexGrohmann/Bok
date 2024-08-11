@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Welcome from "./components/Welcome";
 import { useState } from "react";
+import Menu from "./components/Menu";
 
 async function getData() {
   const url = "/api/subscribers";
@@ -44,8 +45,19 @@ const renderContent = (step, onClick) => {
     case 1:
       return <Welcome onClick={() => onClick(2)} />;
     case 2:
-      // code block
-      break;
+      return (
+        <Menu
+          onClick={() => onClick(3)}
+          onClickAll={() => onClick(4)}
+          onClickAdd={() => onClick(5)}
+        />
+      );
+    case 3:
+    // Quiz coming soon
+    case 4:
+    // return all
+    case 5:
+    // return add new   
     default:
       return <Welcome onClick={() => onClick(2)} />;
   }
