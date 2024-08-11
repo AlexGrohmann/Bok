@@ -14,7 +14,7 @@ export async function getData() {
   }
 }
 
-export async function addData() {
+export async function addData(de, hr) {
   const url = "/api/subscribers";
   try {
     const response = await fetch(url, {
@@ -23,7 +23,7 @@ export async function addData() {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ HR: "test", DE: "test" }),
+      body: JSON.stringify({ HR: de, DE: hr }),
     });
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);

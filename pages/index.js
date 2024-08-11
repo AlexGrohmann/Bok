@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Menu from "./components/Menu";
 import ItemList from "./components/ItemList";
 import { getData } from "./api-helper";
+import AddItem from "./components/AddItem";
 
 export default function Home() {
   const [step, setStep] = useState(1);
@@ -45,7 +46,7 @@ export default function Home() {
       if (error) return <div>Error: {error}</div>;
       return <ItemList data={data} />;
     case 5:
-    // return add new
+      return <AddItem />;
     default:
       return <Welcome onClick={() => setStep(2)} />;
   }
