@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Welcome from "./components/Welcome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "./components/Menu";
+import ItemList from "./components/ItemList";
 
 async function getData() {
   const url = "/api/subscribers";
@@ -13,6 +14,7 @@ async function getData() {
 
     const json = await response.json();
     console.log(json);
+    return json;
   } catch (error) {
     console.error(error.message);
   }
@@ -40,40 +42,59 @@ async function addData() {
   }
 }
 
-const renderContent = (step, onClick) => {
+export default function Home() {
+  const [step, setStep] = useState(1);
+
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (step === 4) {
+      setLoading(true);
+      getData()
+        .then((data) => {
+          setData(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          setError(error.message);
+          setLoading(false);
+        });
+    }
+  }, [step]);
+
   switch (step) {
     case 1:
-      return <Welcome onClick={() => onClick(2)} />;
+      return <Welcome onClick={() => setStep(2)} />;
     case 2:
       return (
         <Menu
-          onClick={() => onClick(3)}
-          onClickAll={() => onClick(4)}
-          onClickAdd={() => onClick(5)}
+          onClick={() => setStep(3)}
+          onClickAll={() => setStep(4)}
+          onClickAdd={() => setStep(5)}
         />
       );
     case 3:
     // Quiz coming soon
     case 4:
-    // return all
+      if (loading) return <div>Loading...</div>;
+      if (error) return <div>Error: {error}</div>;
+      return <ItemList data={data} />;
     case 5:
-    // return add new   
+    // return add new
     default:
-      return <Welcome onClick={() => onClick(2)} />;
+      return <Welcome onClick={() => setStep(2)} />;
   }
-};
 
-export default function Home() {
-  const [step, setStep] = useState(1);
+  // return (
+  //   <div className="container">
+  //     <Head>
+  //       <title>Kroatisch</title>
+  //       <link rel="icon" href="/favicon.ico" />
+  //     </Head>
 
-  return (
-    <div className="container">
-      <Head>
-        <title>Kroatisch</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>{renderContent(step, setStep)}</main>
-    </div>
-  );
+  //     <main>{renderContent(step, setStep)}</main>
+  //   </div>
+  // );
 }
