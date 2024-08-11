@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Welcome from "./components/Welcome";
+import { useState } from "react";
 
 async function getData() {
   const url = "/api/subscribers";
@@ -38,7 +39,21 @@ async function addData() {
   }
 }
 
+const renderContent = (step, onClick) => {
+  switch (step) {
+    case 1:
+      return <Welcome onClick={() => onClick(2)} />;
+    case 2:
+      // code block
+      break;
+    default:
+      return <Welcome onClick={() => onClick(2)} />;
+  }
+};
+
 export default function Home() {
+  const [step, setStep] = useState(1);
+
   return (
     <div className="container">
       <Head>
@@ -46,9 +61,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Welcome />
-      </main>
+      <main>{renderContent(step, setStep)}</main>
     </div>
   );
 }

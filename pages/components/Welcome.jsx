@@ -1,9 +1,11 @@
-function Welcome() {
+function Welcome(props) {
+    console.log(props);
+    const {onClick} = props;
     return ( <div>
         <h1>
             Willkommen
         </h1>
-        <button>
+        <button onClick={onClick}>
             Start
         </button>
     </div> );
