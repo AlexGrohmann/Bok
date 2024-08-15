@@ -1,3 +1,5 @@
+import { deleteData } from "../api-helper";
+
 function Item(props) {
   const { de, hr, id } = props;
 
@@ -5,6 +7,7 @@ function Item(props) {
     <div id={id}>
       <div>DE: {de}</div>
       <div>HR: {hr}</div>
+      <button onClick={() => deleteData(id)}>delete item</button>
     </div>
   );
 }

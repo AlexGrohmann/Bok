@@ -10,7 +10,7 @@ export default async (req, res) => {
   switch (req.method) {
     case "GET":
       try {
-        const subscriber = await collection.findOne({ _id: ObjectId(id) });
+        const subscriber = await collection.findOne({ _id: new ObjectId(id) });
         if (!subscriber) {
           res.status(404).json({ error: "Subscriber not found" });
         } else {
@@ -25,7 +25,7 @@ export default async (req, res) => {
       try {
         const updatedSubscriber = req.body;
         const result = await collection.updateOne(
-          { _id: ObjectId(id) },
+          { _id: new ObjectId(id) },
           { $set: updatedSubscriber }
         );
         if (result.matchedCount === 0) {
@@ -40,7 +40,9 @@ export default async (req, res) => {
 
     case "DELETE":
       try {
-        const result = await collection.deleteOne({ _id: ObjectId(id) });
+        const result = await collection.deleteOne({
+          _id: new ObjectId(id),
+        });
         if (result.deletedCount === 0) {
           res.status(404).json({ error: "Subscriber not found" });
         } else {

@@ -35,3 +35,21 @@ export async function addData(de, hr) {
     console.error(error.message);
   }
 }
+
+export async function deleteData(id) {
+  const url = "/api/subscribers/" + id;
+  console.log("###### ID #####", id);
+  try {
+    const response = await fetch(url, {
+      method: "DELETE", // Method itself
+    });
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
