@@ -6,6 +6,7 @@ import ItemList from "./components/ItemList";
 import { getData } from "./api-helper";
 import AddItem from "./components/AddItem";
 import "./styles/index.css";
+import Quiz from "./components/Quiz";
 
 export default function Home() {
   const [step, setStep] = useState(1);
@@ -42,7 +43,9 @@ export default function Home() {
           />
         );
       case 3:
-      // Quiz coming soon
+        return (
+          <Quiz />
+        )
       case 4:
         if (loading) return <div>Loading...</div>;
         if (error) return <div>Error: {error}</div>;
