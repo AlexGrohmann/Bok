@@ -1,5 +1,3 @@
-import React from "react";
-
 function Quiz(props) {
   const { onClick } = props;
   return (
