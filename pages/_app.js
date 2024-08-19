@@ -43,9 +43,7 @@ export default function Home() {
           />
         );
       case 3:
-        return (
-          <Quiz />
-        )
+        return <Quiz />;
       case 4:
         if (loading) return <div>Loading...</div>;
         if (error) return <div>Error: {error}</div>;
