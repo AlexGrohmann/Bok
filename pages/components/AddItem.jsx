@@ -10,22 +10,30 @@ function AddItem(props) {
     console.log(inputValueDE, inputValueHR);
     if (inputValueDE !== "" && inputValueHR !== "") {
       addData(inputValueDE, inputValueHR)
-        .then(() => setSuccess(true))
+        .then(() => {
+          setSuccess(true);
+          setInputValueDE("");
+          setInputValueHR("");
+        })
         .catch(() => setError(true));
     }
   };
   return (
     <div>
-      <h1>Add item <button onClick={props.goHome}>back</button></h1>
+      <h1>
+        Add item <button onClick={props.goHome}>back</button>
+      </h1>
       <input
         id="de"
         placeholder="DE"
         onChange={(e) => setInputValueDE(e.target.value)}
+        value={inputValueDE}
       ></input>
       <input
         id="HR"
         placeholder="HR"
         onChange={(e) => setInputValueHR(e.target.value)}
+        value={inputValueHR}
       ></input>
       <button onClick={() => handleClick()}>Add</button>
       {success && <div>successfull added </div>}
