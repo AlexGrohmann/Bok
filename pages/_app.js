@@ -40,16 +40,17 @@ export default function Home() {
             onClick={() => setStep(3)}
             onClickAll={() => setStep(4)}
             onClickAdd={() => setStep(5)}
+            goHome={() => setStep(1)}
           />
         );
       case 3:
-        return <Quiz />;
+        return <Quiz goHome={() => setStep(1)} />;
       case 4:
         if (loading) return <div>Loading...</div>;
         if (error) return <div>Error: {error}</div>;
-        return <ItemList data={data} />;
+        return <ItemList data={data} goHome={() => setStep(1)} />;
       case 5:
-        return <AddItem />;
+        return <AddItem goHome={() => setStep(1)} />;
       default:
         return <Welcome onClick={() => setStep(2)} />;
     }

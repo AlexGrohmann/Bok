@@ -16,6 +16,7 @@ function AddItem(props) {
   };
   return (
     <div>
+      <h1>Add item <button onClick={props.goHome}>back</button></h1>
       <input
         id="de"
         placeholder="DE"
