@@ -18,4 +18,207 @@
   },
   "HR": "Test 2",
   "DE": "Test 2"
+},
+{
+  "_id": {
+    "$oid": "66c4f9117bda89f6ef460c99"
+  },
+  "HR": "Test 3",
+  "DE": "Test 4"
+},
+{
+  "_id": {
+    "$oid": "66c4fac57bda89f6ef460c9a"
+  },
+  "HR": "Eins",
+  "DE": "Jedan"
+},
+{
+  "_id": {
+    "$oid": "66c4fb0d7bda89f6ef460c9b"
+  },
+  "HR": "Zwei",
+  "DE": "Dva"
+},
+{
+  "_id": {
+    "$oid": "66c4fb317bda89f6ef460c9c"
+  },
+  "HR": "Drei",
+  "DE": "Tri"
+},
+{
+  "_id": {
+    "$oid": "66c4fb457bda89f6ef460c9d"
+  },
+  "HR": "Sehr",
+  "DE": "Vrlo"
+},
+{
+  "_id": {
+    "$oid": "66c4fb577bda89f6ef460c9e"
+  },
+  "HR": "Sehr gut",
+  "DE": "Vrlo dobar"
+},
+{
+  "_id": {
+    "$oid": "66c4fb647bda89f6ef460c9f"
+  },
+  "HR": "Guten Morgen",
+  "DE": "Dobro jutro"
+},
+{
+  "_id": {
+    "$oid": "66c4fb967bda89f6ef460ca0"
+  },
+  "HR": "Gute Nacht",
+  "DE": "Laku noc"
+},
+{
+  "_id": {
+    "$oid": "66c4fb9e7bda89f6ef460ca1"
+  },
+  "HR": "Hallo",
+  "DE": "Bok"
+},
+{
+  "_id": {
+    "$oid": "66c4fbae7bda89f6ef460ca2"
+  },
+  "HR": "Guten Abend",
+  "DE": "Dobra vecer"
+},
+{
+  "_id": {
+    "$oid": "66c4fbbd7bda89f6ef460ca3"
+  },
+  "HR": "Willkommen",
+  "DE": "Dobrodosli"
+},
+{
+  "_id": {
+    "$oid": "66c4fbc67bda89f6ef460ca4"
+  },
+  "HR": "Hallo",
+  "DE": "Dobar dan"
+},
+{
+  "_id": {
+    "$oid": "66c4fbcf7bda89f6ef460ca5"
+  },
+  "HR": "Dort",
+  "DE": "Tu"
+},
+{
+  "_id": {
+    "$oid": "66c4fbdc7bda89f6ef460ca6"
+  },
+  "HR": "Kroatien",
+  "DE": "Hrvatska"
+},
+{
+  "_id": {
+    "$oid": "66c4fbe47bda89f6ef460ca7"
+  },
+  "HR": "Schlecht",
+  "DE": "Los"
+},
+{
+  "_id": {
+    "$oid": "66c4fbec7bda89f6ef460ca8"
+  },
+  "HR": "Dort",
+  "DE": "Tamo"
+},
+{
+  "_id": {
+    "$oid": "66c4fbfc7bda89f6ef460ca9"
+  },
+  "HR": "Das ist köstlich",
+  "DE": "Ovo je ukusno"
+},
+{
+  "_id": {
+    "$oid": "66c4fc077bda89f6ef460caa"
+  },
+  "HR": "Lecker",
+  "DE": "Ukusan"
+},
+{
+  "_id": {
+    "$oid": "66c4fc0e7bda89f6ef460cab"
+  },
+  "HR": "Ja",
+  "DE": "Da"
+},
+{
+  "_id": {
+    "$oid": "66c4fc1a7bda89f6ef460cac"
+  },
+  "HR": "Ok in Ordnung",
+  "DE": "U redu"
+},
+{
+  "_id": {
+    "$oid": "66c4fc287bda89f6ef460cad"
+  },
+  "HR": "Vielen Dank",
+  "DE": "Hvala vam puno"
+},
+{
+  "_id": {
+    "$oid": "66c4fc337bda89f6ef460cae"
+  },
+  "HR": "Bosnien",
+  "DE": "Bosna"
+},
+{
+  "_id": {
+    "$oid": "66c4fc3d7bda89f6ef460caf"
+  },
+  "HR": "Prost",
+  "DE": "Zivjeli"
+},
+{
+  "_id": {
+    "$oid": "66c4fc4c7bda89f6ef460cb0"
+  },
+  "HR": "Gern geschehen",
+  "DE": "Molim lijepo"
+},
+{
+  "_id": {
+    "$oid": "66c4fc527bda89f6ef460cb1"
+  },
+  "HR": "Nein",
+  "DE": "Ne"
+},
+{
+  "_id": {
+    "$oid": "66c4fc597bda89f6ef460cb2"
+  },
+  "HR": "Danke",
+  "DE": "Hvala"
+},
+{
+  "_id": {
+    "$oid": "66c4fc617bda89f6ef460cb3"
+  },
+  "HR": "Bitte",
+  "DE": "Molim vas"
+},
+{
+  "_id": {
+    "$oid": "66c4fc6f7bda89f6ef460cb4"
+  },
+  "HR": "Entschuldigung",
+  "DE": "Oprostite"
+},
+{
+  "_id": {
+    "$oid": "66c4fc7c7bda89f6ef460cb5"
+  },
+  "HR": "Auf Wiedersehen",
+  "DE": "Dovidenja"
 }]
