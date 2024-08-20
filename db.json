@@ -1,4 +1,21 @@
+[{
+  "_id": {
+    "$oid": "66a634f7c85873d92397c4eb"
+  },
+  "HR": "Bok",
+  "DE": "Hallo"
+},
 {
-    "HR": "Bok",
-    "DE": "Hallo"
-}
+  "_id": {
+    "$oid": "66b8d296ef3b198ba35c5b5b"
+  },
+  "HR": "Deutschland",
+  "DE": "Kroatien"
+},
+{
+  "_id": {
+    "$oid": "66be1d8c6cfe7d8b9bc8ce26"
+  },
+  "HR": "Test 2",
+  "DE": "Test 2"
+}]
