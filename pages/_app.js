@@ -44,7 +44,9 @@ export default function Home() {
           />
         );
       case 3:
-        return <Quiz goHome={() => setStep(1)} />;
+        if (loading) return <div>Loading...</div>;
+        if (error) return <div>Error: {error}</div>;
+        return <Quiz goHome={() => setStep(1)} data={data} />;
       case 4:
         if (loading) return <div>Loading...</div>;
         if (error) return <div>Error: {error}</div>;
